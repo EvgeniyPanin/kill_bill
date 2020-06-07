@@ -19,7 +19,7 @@ form.addEventListener('submit', function (evt) {
         }
     }
 
-    fetch(`https://praktikum.tk/cohort11/users/me`, {
+    fetch(`https://praktikum.tk/${cohortValue}/users/me`, {
         headers: api.headers
     })
         .then(res => {
