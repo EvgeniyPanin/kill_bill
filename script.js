@@ -1,5 +1,13 @@
 const form = document.querySelector('#kill_bill');
 const button = form.querySelector('.button');
+const errorMessages = {
+    textErrorEmptyString: 'Это обязательное поле',
+    textErrorLength: 'Должно быть не менее 4 символов',
+}
+
+const formManager = new FormValidator(form, errorMessages);
+const cleanForm = formManager.setEventListeners();
+formManager.setSubmitButtonState(formManager.checkFormValidity(form));
 
 form.addEventListener('submit', function (evt) {
     evt.preventDefault();

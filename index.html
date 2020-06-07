@@ -5,18 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Удалить карточки</title>
     <link rel="stylesheet" href="./popup/popup.css">
+    <link rel="stylesheet" href="./error-message/error-message.css">
 </head>
 <body>
     <div class="popup popup_is-opened">
         <div class="popup__content">
           <h3 class="popup__title">Введите данные студента</h3>
           <form id="kill_bill" class="popup__form" name="delete-cards" novalidate>
-              <input type="text" name="cohort" class="popup__input" id="cohort" placeholder="Введите когорту" required>
-              <input type="text" name="token" class="popup__input" id="token" placeholder="Введите токен" required>
-              <button class="button popup__button popup__button_place_edit" type="submit">Удалить мои карточки</button>
+              <input type="text" name="cohort" class="popup__input" id="cohort" placeholder="Введите когорту" minlength="4" required>
+              <span class="error-message" id="cohort-error"></span>
+              <input type="text" name="token" class="popup__input" id="token" placeholder="Введите токен" minlength="4" required>
+              <span class="error-message" id="token-error"></span>
+              <button class="button popup__button popup__button_place_edit" type="submit" disabled>Удалить мои карточки</button>
           </form>
         </div>
     </div>
+    <script src="./FormValidator.js"></script>
     <script src="./script.js"></script>
 </body>
 </html>
